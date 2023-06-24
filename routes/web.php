@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CustomersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('dashboard');
+Route::get('/', [App\Http\Controllers\Admin\BaseController::class, 'index'])->name('dashboard');
+Route::resource('customer', CustomersController::class);
