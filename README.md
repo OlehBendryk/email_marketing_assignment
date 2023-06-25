@@ -31,3 +31,6 @@ where you run cron command, which checks the status of the email and the time of
 `php artisan check:email-status`
 
 sent email can see in the storage/logs
+*it should also be noted that variables `MAIL_MAILER=log` and `QUEUE_CONNECTION=database`
+
+
