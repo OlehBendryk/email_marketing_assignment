@@ -8,7 +8,7 @@ Run project:
   
 <p>open a new terminal window and enter to the container </p>
 
-- `docker exec -it email_marketing-email_marketing-1 bash  `
+- `docker exec -it email_marketing_assignment-email_marketing-1 bash`
 
 stick this inside the container
 - `composer install`
