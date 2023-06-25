@@ -3,7 +3,7 @@
 
 Run project:
 - `git clone git@github.com:OlehBendryk/email_marketing_assignment.git`
-- `cd email_marketing`
+- `cd email_marketing_assignment`
 - `docker-compose up --build`
   
 <p>open a new terminal window and enter to the container </p>
