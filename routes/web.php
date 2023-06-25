@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\BaseController;
 use App\Http\Controllers\Admin\CustomersController;
+use App\Http\Controllers\Admin\EmailTemplateController;
 use App\Http\Controllers\Admin\GroupsController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\Admin\BaseController::class, 'index'])->name('dashboard');
+Route::get('/', [BaseController::class, 'index'])->name('dashboard');
 Route::resource('customer', CustomersController::class);
 Route::resource('group', GroupsController::class);
+
+Route::resource('email_template', EmailTemplateController::class);

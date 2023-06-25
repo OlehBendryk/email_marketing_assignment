@@ -18,10 +18,10 @@
                             </a>
                         </li>
                         <li>
-{{--                            <a href="{{route('email.index')}}" class="nav-link">--}}
-{{--                                Email Template--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                            <a href="{{route('email_template.index')}}" class="nav-link">
+                                Email Templates
+                            </a>
+                        </li>
 {{--                        <li>--}}
 {{--                            <a href="{{route('email_sending.create')}}" class="nav-link">--}}
 {{--                                Send Email--}}
