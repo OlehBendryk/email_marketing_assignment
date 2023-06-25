@@ -12,12 +12,12 @@
                                 Customers
                             </a>
                         </li>
-{{--                        <li>--}}
-{{--                            <a href="{{route('group.index')}}" class="nav-link">--}}
-{{--                                Groups--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li>--}}
+                        <li>
+                            <a href="{{route('group.index')}}" class="nav-link">
+                                Groups
+                            </a>
+                        </li>
+                        <li>
 {{--                            <a href="{{route('email.index')}}" class="nav-link">--}}
 {{--                                Email Template--}}
 {{--                            </a>--}}

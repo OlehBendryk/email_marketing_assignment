@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CustomersController;
+use App\Http\Controllers\Admin\GroupsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,4 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\Admin\BaseController::class, 'index'])->name('dashboard');
 Route::resource('customer', CustomersController::class);
+Route::resource('group', GroupsController::class);

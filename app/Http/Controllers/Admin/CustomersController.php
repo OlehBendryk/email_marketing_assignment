@@ -8,13 +8,11 @@ use App\Http\Requests\UpdateCustomerRequest;
 use App\Models\Customer;
 use App\Services\CustomerService;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use JetBrains\PhpStorm\NoReturn;
 
 
 class CustomersController extends BaseController
 {
-    private $customerService;
+    private CustomerService $customerService;
 
     public function __construct(CustomerService $customerService)
     {
@@ -97,7 +95,7 @@ class CustomersController extends BaseController
     public function destroy(int $id): RedirectResponse
     {
         $customer = $this->customerService->delete($id);
-        
+
         return redirect()
             ->route('customer.index')
             ->with('success', "Customer {$customer['first_name']} {$customer['last_name']} has been deleted");

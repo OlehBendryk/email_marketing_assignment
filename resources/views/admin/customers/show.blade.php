@@ -24,11 +24,11 @@
                             <i class="fas fa-pencil-alt"></i> Edit customer
                         </a>
                         <div class="mt-2">
-                            <form action="{{ route('customer.destroy', $customer) }}" method="post" >
+                            <form action="{{ route('customer.destroy', $customer) }}" method="post" onsubmit="return confirm('Are you sure you want to delete customer {{$customer->first_name}} {{$customer->last_name}}?');">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn btn-danger">
-                                    <i class="fas faw fa-trash-alt "></i>  Remove
+                                    <i class="fas fa-trash-alt"></i> Remove
                                 </button>
                             </form>
                         </div>

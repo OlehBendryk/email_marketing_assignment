@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 
-class CreateCustomerRequest extends FormRequest
+class CreateGroupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,8 @@ class CreateCustomerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['required', 'string', 'min:3', 'max:36'],
-            'last_name' => ['required', 'string', 'min:3', 'max:36'],
-            'email' => ['required', 'email', 'min:3', 'max:64', Rule::unique('customers', 'email')],
-            'sex' => ['required', 'string'],
-            'birth_date' => ['required', 'date'],
+            'name' => ['required','min:3','max:32',Rule::unique('groups','name')],
+            'customers' => 'required|array',
         ];
     }
 }
