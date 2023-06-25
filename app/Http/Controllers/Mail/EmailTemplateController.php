@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Mail;
 
 
 use App\Http\Requests\CreateEmailTemplateRequest;
@@ -9,7 +9,7 @@ use App\Services\EmailTemplateService;
 use Illuminate\Http\RedirectResponse;
 
 
-class EmailTemplateController extends BaseController
+class EmailTemplateController extends BaseMailController
 {
     private EmailTemplateService $emailTemplateService;
     private EmailTemplateRepository $emailTemplateRepository;

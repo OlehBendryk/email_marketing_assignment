@@ -4,11 +4,17 @@ namespace App\Services;
 
 
 use App\Models\Customer;
-use Illuminate\Database\Eloquent\Model;
 
 
 class CustomerService
 {
+    protected mixed $model;
+
+    public function __construct()
+    {
+        $this->model = app(Customer::class);
+    }
+
     /**
      * @param  array  $data
      *
@@ -16,7 +22,7 @@ class CustomerService
      */
     public function create(array $data)
     {
-        $customer = new Customer();
+        $customer = $this->model;
 
         $customer->first_name = $data['first_name'];
         $customer->last_name = $data['last_name'];

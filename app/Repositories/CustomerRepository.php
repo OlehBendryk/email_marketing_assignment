@@ -14,6 +14,23 @@ class CustomerRepository extends CoreRepository
         return Model::class;
     }
 
+    public function getAllWithPagination(): mixed
+    {
+        $column = ['id', 'first_name', 'last_name', 'email', 'sex', 'birth_date'];
+
+        return $this->startConditions()
+            ->select($column)
+            ->orderBy('id', 'DESC')
+            ->paginate(5);
+    }
+
+    public function getById(int $id): mixed
+    {
+        return $this->startConditions()
+            ->where('id', $id)
+            ->first();
+    }
+
     /**
      * @return \Illuminate\Support\Collection
      */

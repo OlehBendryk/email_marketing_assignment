@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CreateCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
-use App\Models\Customer;
+use App\Repositories\CustomerRepository;
 use App\Services\CustomerService;
 use Illuminate\Http\RedirectResponse;
 
@@ -13,11 +13,15 @@ use Illuminate\Http\RedirectResponse;
 class CustomersController extends BaseController
 {
     private CustomerService $customerService;
+    private CustomerRepository $customerRepository;
 
-    public function __construct(CustomerService $customerService)
-    {
+    public function __construct(
+        CustomerService $customerService,
+        CustomerRepository $customerRepository
+    ) {
         parent::__construct();
         $this->customerService = $customerService;
+        $this->customerRepository = $customerRepository;
     }
 
     /**
@@ -25,7 +29,7 @@ class CustomersController extends BaseController
      */
     public function index()
     {
-        $customers = Customer::paginate(5);
+        $customers = $this->customerRepository->getAllWithPagination();
 
         return view('admin.customers.index')
             ->with('customers', $customers);
@@ -56,7 +60,7 @@ class CustomersController extends BaseController
      */
     public function show(int $id)
     {
-        $customer = Customer::findOrFail($id);
+        $customer = $this->customerRepository->getById($id);
 
         return view('admin.customers.show')
             ->with('customer', $customer);
@@ -67,7 +71,7 @@ class CustomersController extends BaseController
      */
     public function edit(int $id)
     {
-        $customer = Customer::findOrFail($id);
+        $customer = $this->customerRepository->getById($id);
 
         return view('admin.customers.edit')
             ->with('customer', $customer);

@@ -48,4 +48,12 @@ class GroupRepository extends CoreRepository
     {
         return $this->getById($id)->customers()->where('group_id', $id)->get();
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAllGroups(): mixed
+    {
+        return $this->startConditions()->all()->pluck('name', 'id');
+    }
 }

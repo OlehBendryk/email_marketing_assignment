@@ -22,11 +22,11 @@
                                 Email Templates
                             </a>
                         </li>
-{{--                        <li>--}}
-{{--                            <a href="{{route('email_sending.create')}}" class="nav-link">--}}
-{{--                                Send Email--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                        <li>
+                            <a href="{{route('email_mass_sending.index')}}" class="nav-link">
+                                Send Email
+                            </a>
+                        </li>
                     </ul>
                     <hr>
                 </div>

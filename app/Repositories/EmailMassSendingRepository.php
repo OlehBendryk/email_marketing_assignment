@@ -3,11 +3,11 @@
 namespace App\Repositories;
 
 
-use App\Models\EmailTemplate as Model;
-use Illuminate\Support\Collection;
+use App\Models\EmailMassSending as Model;
+use Illuminate\Database\Eloquent\Collection;
 
 
-class EmailTemplateRepository extends CoreRepository
+class EmailMassSendingRepository extends CoreRepository
 {
     protected function getModel()
     {
@@ -28,10 +28,10 @@ class EmailTemplateRepository extends CoreRepository
     }
 
     /**
-     * @return \Illuminate\Support\Collection
+     * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getAllEmailTemplates(): Collection
     {
-        return $this->startConditions()->all()->pluck('title', 'id');
+        return $this->startConditions()->all();
     }
 }

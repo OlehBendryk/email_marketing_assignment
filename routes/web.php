@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\Admin\BaseController;
 use App\Http\Controllers\Admin\CustomersController;
-use App\Http\Controllers\Admin\EmailTemplateController;
+use App\Http\Controllers\Mail\EmailMassSendingController;
+use App\Http\Controllers\Mail\EmailTemplateController;
 use App\Http\Controllers\Admin\GroupsController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,4 @@ Route::resource('customer', CustomersController::class);
 Route::resource('group', GroupsController::class);
 
 Route::resource('email_template', EmailTemplateController::class);
+Route::resource('email_mass_sending', EmailMassSendingController::class);
